@@ -142,11 +142,11 @@ html {
 
 .banner {
   background-image: linear-gradient(
-      to bottom right,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+      to bottom,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
     ),
-    url(../imeges/banner/banner.png);
+    url(../IMG/baner/top-baner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
@@ -154,6 +154,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .banner {
+    background-image: url(../IMG/baner/top-baner@2x.jpg);
+  }
 }
 
 .banner__title {
@@ -303,7 +309,7 @@ html {
   content: '';
   margin: auto;
   margin-top: 30px;
-  background-image: url(../imeges/lines/line.png);
+  background-image: url(../IMG/icon/main-line.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -535,7 +541,7 @@ html {
   content: '';
   margin: auto;
   margin-top: 30px;
-  background-image: url(../imeges/lines/newslater-line.png);
+  background-image: url(../IMG/icon/line-wight.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -549,12 +555,18 @@ html {
 }
 
 .footer {
-  background-image: url(../imeges/banner/footer.jpg);
+  background-image: url(../IMG/baner/footer-baner.jpg);
   background-color: #4dc5ab;
   margin: 0;
   padding: 0;
   padding-top: 100px;
   padding-bottom: 130px;
+}
+
+@media screen and (min-resolution: 2dppx) {
+  .footer__overley {
+    background-image: url(../IMG/baner/footer-baner@2x.jpg);
+  }
 }
 
 .footer__description {
