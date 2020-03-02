@@ -28,7 +28,6 @@ html {
   width: 1110px;
   margin-left: auto;
   margin-right: auto;
-  /* position: relative; */
 }
 
 .top {
@@ -280,17 +279,6 @@ html {
   padding-bottom: 100px;
 }
 
-.line::before {
-  display: inline-block;
-  height: 15px;
-  width: 165px;
-  content: '';
-  background-image: url(../imeges/lines/line.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
 .main-title {
   font-family: var(--main-font);
   font-size: 48px;
@@ -384,6 +372,10 @@ html {
   margin-bottom: -5px;
 }
 
+.featured-list__link {
+  position: relative;
+}
+
 .featured-list__link::before {
   display: none;
   position: absolute;
@@ -399,10 +391,6 @@ html {
   animation-timing-function: var(--animation-function);
 }
 
-.featured-list__link:hover::before {
-  display: inline-block;
-}
-
 .card__icon {
   background-color: transparent;
   transition: background-color 250ms var(--timing-fn);
@@ -414,24 +402,28 @@ html {
   height: 50px;
   padding: 10px;
   fill: var(--gallery-text-color);
+  transition: background-color var(--animation-time) var(--animation-function);
 }
 .card__icon--share {
   width: 50px;
   height: 50px;
   padding: 10px;
   fill: var(--gallery-text-color);
+  transition: background-color var(--animation-time) var(--animation-function);
 }
 .card__icon--clock {
   width: 50px;
   height: 50px;
   padding: 10px;
   fill: var(--gallery-text-color);
+  transition: background-color var(--animation-time) var(--animation-function);
 }
 .card__icon--cart {
   width: 50px;
   height: 50px;
   padding: 10px;
   fill: var(--gallery-text-color);
+  transition: background-color var(--animation-time) var(--animation-function);
 }
 .card__icon:nth-child(4n) {
   width: 164px;
@@ -443,6 +435,81 @@ html {
   font-family: var(--other-font);
   font-size: 14px;
   color: var(--gallery-text-color);
+}
+
+.card__actions {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: cards;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+}
+
+.card__actions {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  justify-content: space-between;
+  align-items: inherit;
+  flex-wrap: wrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  animation-name: cards;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+}
+
+.card__icon {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--gallery-text-color);
+}
+.card__icon:nth-child(3n) {
+  margin-right: 0px;
+}
+
+.card__icon:nth-child(4n) {
+  margin-top: 4px;
+}
+
+.card__icon--like:hover,
+.card__icon--like:focus {
+  background-color: var(--galley-prise-change-color);
+  cursor: pointer;
+}
+.card__icon--share:hover,
+.card__icon--share:focus {
+  background-color: var(--galley-prise-change-color);
+  cursor: pointer;
+}
+.card__icon--clock:hover,
+.card__icon--clock:focus {
+  background-color: var(--galley-prise-change-color);
+  cursor: pointer;
+}
+.card__icon:nth-child(4n):hover,
+.card__icon:nth-child(4n):focus {
+  background-color: #323232;
+  cursor: pointer;
+}
+
+.featured-list__link:hover .card__actions {
+  display: flex;
+  opacity: 1;
+}
+
+.featured-list__link:hover::before {
+  display: block;
+  transform: translateY(0);
 }
 
 /* inform */
@@ -523,17 +590,6 @@ html {
   margin: 0;
 }
 
-.line2::before {
-  display: inline-block;
-  height: 15px;
-  width: 165px;
-  content: '';
-  background-image: url(../imeges/lines/newslater-line.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
 .footer__title::after {
   display: block;
   height: 15px;
@@ -597,9 +653,6 @@ html {
   width: 85px;
   height: 60px;
   background-color: #4ec6ab;
-  background-image: url(../imeges/icons/newslatter-icon.png);
-  background-repeat: no-repeat;
-  background-position: center;
   transition: background-color var(--animation-time) var(--animation-function);
 }
 .button:hover,
@@ -609,6 +662,12 @@ html {
 .footer__form {
   display: flex;
   justify-content: center;
+}
+
+.footer__icon {
+  width: 77px;
+  height: 53px;
+  fill: var(--gallery-text-color);
 }
 
 /* ANIMATION */
